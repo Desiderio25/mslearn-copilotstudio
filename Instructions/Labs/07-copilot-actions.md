@@ -53,6 +53,20 @@ In this exercise, you will create an agent flow that retrieves a property based 
 
 1. Under **Create new**, select **Agent flow**.
 
+1. Select **Save draft** and wait for the agent flow to save.
+
+1. Select the **Overview** tab.
+
+1. Select **Edit** in the **Details** section.
+
+1. Rename the agent flow `Get Property` and update the **Description** to `Get properties with the right number of bedrooms`.
+
+1. Select **Save**.
+
+    > **Note:** Naming the flow now (before testing) ensures that if a runtime error occurs, the error logs reference the flow by name (`Get Property`) rather than as `Untitled`, making troubleshooting much easier.
+
+1. Select the **Designer** tab.
+
 1. Select the trigger step **When an agent calls the flow** and select **+ Add an input**.
 
 1. Select **Text**.
@@ -139,15 +153,7 @@ In this exercise, you will create an agent flow that retrieves a property based 
 
 1. In the **Your agent flow published successfully!** pop-up, select **Go back to agent**.
 
-1. Select the agent flow tool that you just created.
-
-1. In the **Details** section, update the Flow **Name** to `Get Property`
-
-1. Update the **Description** to `Get properties with the right number of bedrooms`.
-
-1. Select **Save**
-
-1. Select the **Tools** tab and see the Get Property flow you created.
+1. Select the **Tools** tab and see the **Get Property** flow you created.
 
 1. Select **Publish**.
 
