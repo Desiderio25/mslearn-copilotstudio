@@ -144,7 +144,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 1. Select **Sign in**.
 
    > [!NOTE]
-   > If you receive the error "Failed to create OAuth connection: ClientWarning: The browser has blocked the connection authentication popup window", select the **pop-up blocked** icon in the browser address bar and then select **Always allow pop-ups and redirects from `https://copilotstudio.microsoft.com**`.
+   > If you receive the error "Failed to create OAuth connection: ClientWarning: The browser has blocked the connection authentication popup window", select the **pop-up blocked** icon in the browser address bar and then select **Always allow pop-ups and redirects from `https://copilotstudio.microsoft.com`**.
 
 1. Select your account.
 
@@ -222,7 +222,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. In the **Instructions** section, select **Edit**.
 
-1. Under the *## Step-by-step instructions* in the agent instructions, add the following to the final step: `Use the ` and type `/` and select the **Send Summary to Teams** tool and then enter ` when the task analysis is complete.`
+1. Under the *# Step-by-Step Instructions* in the agent instructions, add the following to the final step: `Use the ` and type `/` and select the **Send Summary to Teams** tool and then enter ` when the task analysis is complete.`
 
    ![Screenshot of referencing the workflow tool in the agent instructions.](../media/workflow-add-tool-to-instructions.png)
 
@@ -397,7 +397,9 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. For *Enter a name*, enter `Task list`.
 
-1. For *Enter a value to respond with*, use **Dynamic Content** and select the **body/value** from the **List rows present in a table** action.
+1. For *Enter a value to respond with*, select the field, and then select the **Expression** (**fx**) option. Enter the following expression to convert the returned rows into text that matches the **Text** output type, and then select **Add**:
+
+   `string(outputs('List_rows_present_in_a_table')?['body/value'])`
 
 1. Select **Save draft** near the upper-right of the page.
 
