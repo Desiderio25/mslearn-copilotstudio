@@ -31,7 +31,7 @@ This exercise will take approximately **45** minutes to complete.
 - How to create an agent using natural language
 - How agent instructions influence generative behavior
 - How Generative AI answers use configured knowledge sources
-- How to publish an agent to Microsoft Teams
+- How to publish an agent to the Demo website
 
 ## High-level lab steps
 
@@ -42,6 +42,7 @@ This exercise will take approximately **45** minutes to complete.
 - Publish the agent
 
 ## Prerequisites
+
 - Have a Microsoft Entra ID account
 - Have a Copilot Studio license or have signed up for a [free trial](https://go.microsoft.com/fwlink/p/?linkid=2252605).
 - Have access to a Power Platform environment and a solution where you can create agents and related assets.
@@ -49,7 +50,7 @@ This exercise will take approximately **45** minutes to complete.
   - the environment and **Lab Exercises** solution created in the **ILT Setup** lab, or
   - your own existing environment and solution.
 - If you do not already have an environment and solution prepared, complete the steps in the **ILT Setup** lab before continuing.
-  
+
 > [!IMPORTANT]
 > You may notice a new Copilot Studio experience that is currently in preview. These labs use the current Copilot Studio interface, so some steps and screenshots may not match the preview experience. To follow the lab instructions successfully, use the current Copilot Studio UI throughout these exercises.
 
@@ -59,7 +60,7 @@ When generative orchestration is enabled, the agent can use instructions, knowle
 
 ## Exercise 1 - Create an agent from a template
 
-In this exercise, you will create an agent by using a template to create the agent, and then test the agent.
+In this exercise, you will create an agent by using a template, and then test the agent.
 
 ### Task 1.1 – Create an agent from the Safe Travels template
 
@@ -71,7 +72,7 @@ In this exercise, you will create an agent by using a template to create the age
 
    ![Safe Travels template.](../media/select-template.png)
 
-1. In the upper-right of the page, select  the ellipses (**...**) and select **Edit advanced settings**.
+1. In the upper-right of the page, select the ellipses (**...**) and select **Edit advanced settings**.
 
 1. Validate that the selected *Solution* is **Lab Exercises** and the *Schema name* prefix is **fab** and select **Cancel**.
 
@@ -322,4 +323,4 @@ In this exercise, you will create a new agent using natural language to answer q
 
 ## Summary
 
-In this lab, you created an agent and defined its expected behavior using instructions. You also added a public website as a knowledge source and tested your agent with questions that the knowledge source could help answer. While these instructions guide generative responses, later labs will show how to use using topics, knowledge, and tools.
+In this lab, you created an agent and defined its expected behavior using instructions. You also added a public website as a knowledge source and tested your agent with questions that the knowledge source could help answer. Later labs will show how to use topics, knowledge, and tools to further control agent behavior.
