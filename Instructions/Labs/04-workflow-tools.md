@@ -324,7 +324,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
    ![Screenshot of tasks in a file in OneDrive.](../media/onedrive-tasks.png)
 
-1. Select the rows and columns containing data (A1:F5), and in the toolbar select the **Insert** tab, and select **Table**, tick the box My table has headers, then select **OK**.
+1. Select the rows and columns containing data (A1:F5), and in the toolbar select the **Insert** tab, and select **Table**, check the box **My table has headers**, then select **OK**.
 
 1. Select the **Table Design** tab and in the upper-left change the name of the table from *Table1* to **`Tasks`**.
 
