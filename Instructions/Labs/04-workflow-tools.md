@@ -258,6 +258,9 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 ### Task 3.1 - Create an Excel file
 
+[!NOTE]
+> If you have issues creating this spreadsheet you can download a copy from this link [Download the file](../../Allfiles/Operations%20tasks.xlsx)
+
 1. In Copilot Studio, select the **App launcher** icon in the upper-left corner, then select **OneDrive**.
 
    ![Screenshot of App Launcher.](../media/copilot-studio-app-launcher.png)
@@ -321,7 +324,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
    ![Screenshot of tasks in a file in OneDrive.](../media/onedrive-tasks.png)
 
-1. Select the rows and columns containing data (A1:F5), and in the toolbar select the **Insert** tab, and select **Table**, then select **OK**.
+1. Select the rows and columns containing data (A1:F5), and in the toolbar select the **Insert** tab, and select **Table**, tick the box My table has headers, then select **OK**.
 
 1. Select the **Table Design** tab and in the upper-left change the name of the table from *Table1* to **`Tasks`**.
 
