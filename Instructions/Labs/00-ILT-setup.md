@@ -38,12 +38,15 @@ Before you start the lab exercises, you must create a development environment fo
    - **Type**: Developer
    - **Region**: default region
    - **Name**: *Your name*
+
+   ![Create an environment in the Power Platform Admin center.](../media/create-environment.png)
+
+1. Expand **Change default settings** and configure the following:
    - **Environment group**: None
    - **Make this a Managed Environment**: No
    - **Get new features early**: No
    - **Create on behalf**: No
-
-   ![Create an environment in the Power Platform Admin center.](../media/create-environment.png)
+   - **Add a Dataverse data store?**: Yes
 
 1. Select **Next** and in the **Add Dataverse** section:
 
@@ -61,7 +64,7 @@ Before you start the lab exercises, you must create a development environment fo
 1. In a new browser tab, navigate to `https://copilotstudio.microsoft.com/` and sign in if prompted.
 
   > [!NOTE]  
-  > If you experience issues loading Copilot Studio or your environment:
+  > If you experience issues loading Copilot Studio on your environment:
   > - First, capture your environment ID (GUID) from the Power Platform admin center:
   >   1. Open the environment you created at `https://admin.powerplatform.microsoft.com/manage/environments`.
   >   2. Locate the environment ID in the URL (a long string such as `12345678-90ab-cdef-1234-567890abcdef`).
@@ -100,6 +103,8 @@ Before you start the lab exercises, you must create a development environment fo
 1. For **Name**, enter `fabrikam`
 
 1. For **Prefix**, enter `fab`
+
+1. Select **Save** to create the publisher.
 
 1. Verify that **Fabrikam (fabrikam)** is selected in the **Publisher** drop-down.
 
