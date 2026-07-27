@@ -52,7 +52,7 @@ This exercise will take approximately **30** minutes to complete.
 > [!IMPORTANT]
 > The new Copilot Studio experience is the redesigned interface that replaces the classic topic authoring canvas. Steps and screenshots in this lab reflect the new experience. If your environment shows the classic interface, follow the prompt to switch to the new experience before proceeding.
 
-## Key concept: Instructions-driven agents
+## Key concept: Instruction-driven agents
 
 The new Copilot Studio experience replaces the topic authoring canvas with a simpler, instruction-driven model:
 
