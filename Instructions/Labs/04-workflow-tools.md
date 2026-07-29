@@ -479,6 +479,8 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
    ![Screenshot of adding a workflow as a tool to a topic.](../media/topic-add-tool.png)
 
+1. In the **Get Task List** node, select the **Priority** input, select **Formula** (**fx**), enter `Text(Global.Priority)`, and then select **Insert**. This converts the choice value from the question into the text value required by the workflow.
+
 1. Select **Save**.
 
 ### Task 3.6 - Update agent instructions with the topic
@@ -487,7 +489,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. In the **Instructions** section, select **Edit**.
 
-1. Under the *## Skills* in the agent instructions, add the following to the final step: `Use the ` and type `/` and select the **Priority Tasks** topic and then enter ` to get the task list.`
+1. Clear the generated agent instructions. Enter `When a user asks to analyze the task list, use the `, type `/`, select the **Priority Tasks** topic, and then enter ` topic to get the task list.` This ensures requests to analyze the task list are routed to the topic and its workflow tool instead of being answered from knowledge.
 
 1. Select **Save**.
 
