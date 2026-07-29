@@ -488,6 +488,8 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
    ![Screenshot of the inputs of workflow as a tool.](../media/workflow-tool-inputs.png)
 
+1. Select the (...) next to **Text(Global.Priority)**, select **Formula** (**fx**), enter `Text(Global.Priority)`, and then select **Insert**. This converts the choice value from the question into the text value required by the workflow.
+
 1. In the **Completion** section, for **After running**, select **Write the response with generative AI**.
 
 1. Select **Save**.
@@ -501,15 +503,6 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 1. Under the **Question** node, select the **+** icon, select **Add a tool**, select the **Tool** tab, and then select the **Get Task List** tool.
 
    ![Screenshot of adding a workflow as a tool to a topic.](../media/topic-add-tool.png)
-
-1. In the tool node, in the **Power Automate inputs** section, select the value field for the **Priority (String)** input.
-
-1. Select the **Formula** (**fx**) option, enter the following formula, and then select **Insert**:
-
-   `Text(Global.Priority)`
-
-   > [!NOTE]
-   > The **Priority** global variable created by the question node holds a choice value, but the workflow input requires text. If you select the **Global.Priority** variable directly, the node displays an error stating that the value isn't a text value. The `Text()` formula converts the choice to text and clears the error.
 
 1. Select **Save**.
 
