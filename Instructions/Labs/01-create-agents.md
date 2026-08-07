@@ -31,7 +31,7 @@ This exercise will take approximately **45** minutes to complete.
 - How to create an agent using natural language
 - How agent instructions influence generative behavior
 - How Generative AI answers use configured knowledge sources
-- How to publish an agent to Microsoft Teams
+- How to publish an agent to the Demo website
 
 ## High-level lab steps
 
@@ -42,6 +42,7 @@ This exercise will take approximately **45** minutes to complete.
 - Publish the agent
 
 ## Prerequisites
+
 - Have a Microsoft Entra ID account
 - Have a Copilot Studio license or have signed up for a [free trial](https://go.microsoft.com/fwlink/p/?linkid=2252605).
 - Have access to a Power Platform environment and a solution where you can create agents and related assets.
@@ -59,7 +60,7 @@ When generative orchestration is enabled, the agent can use instructions, knowle
 
 ## Exercise 1 - Create an agent from a template
 
-In this exercise, you will create an agent by using a template to create the agent, and then test the agent.
+In this exercise, you will create an agent by using a template, and then test the agent.
 
 ### Task 1.1 – Create an agent from the Safe Travels template
 
@@ -71,9 +72,9 @@ In this exercise, you will create an agent by using a template to create the age
 
    ![Safe Travels template.](../media/select-template.png)
 
-1. In the upper-right of the page, select  the ellipses (**...**) and select **Edit advanced settings**.
+1. In the upper-right of the page, select the ellipses (**...**) and select **Edit advanced settings**.
 
-1. Validate that the selected *Solution* is **Lab Exercises** and the *Schema name* prefix is **fab** and select **Cancel**.
+1. Validate that the selected *Solution* is **Lab Exercises**, the *Schema name* prefix is **fab**, and then select **Cancel**.
 
 1. In the upper-right of the page, select **Create**.
 
@@ -89,7 +90,7 @@ In this exercise, you will create an agent by using a template to create the age
 
 1. Select the **Topics** tab and select the **System** filter.
 
-1. Select the **Conversational Start** topic. Review the contents of the **Message** node. Note that the contents of the message are displayed in the **Test** pane.
+1. Select the **Conversation Start** topic. Review the contents of the **Message** node. Note that the contents of the message are displayed in the **Test** pane.
 
    ![Conversation Start topic from the Safe Travels template.](../media/safe-travels-conversation-start-topic.png)
 
@@ -162,7 +163,7 @@ In this exercise, you will create a new agent using natural language to answer q
 
 1. Select **Update**.
 
-1. In the *Start building by describing what your agent needs to do* text box, Enter the following prompt:
+1. In the *Start building by describing what your agent needs to do* text box, enter the following prompt:
 
    ```prompt
    You are an agent that assists with questions related to claiming US government benefits.
@@ -188,7 +189,7 @@ In this exercise, you will create a new agent using natural language to answer q
 
 1. Select **Save**.
 
-1. In the **Select your agent's model** section, select **GPT-5 Auto (Preview)**, if available. Otherwise, select the default recommended GPT model.
+1. In the **Select your agent's model** section, select **GPT-5 Auto (Preview)**, if available. Otherwise, leave the default model selected.
 
 1. In the **Instructions** section, select **Edit**.
 
@@ -203,7 +204,7 @@ In this exercise, you will create a new agent using natural language to answer q
    > [!NOTE]
    > Agent instructions guide how the agent should behave, but they do not strictly enforce behavior. In later labs, you will learn how to change behavior by using topics, knowledge, and generative answers with restricted knowledge sources.
 
-1. In the **Suggested prompts** section, select **Add suggested prompts**.
+1. In the **Suggested prompts** section, select **+ Add suggested prompts**.
 
 1. For **Title**, enter `Health`.
 
@@ -322,4 +323,4 @@ In this exercise, you will create a new agent using natural language to answer q
 
 ## Summary
 
-In this lab, you created an agent and defined its expected behavior using instructions. You also added a public website as a knowledge source and tested your agent with questions that the knowledge source could help answer. While these instructions guide generative responses, later labs will show how to use using topics, knowledge, and tools.
+In this lab, you created an agent and defined its expected behavior using instructions. You also added a public website as a knowledge source and tested your agent with questions that the knowledge source could help answer. Later labs will show how to use topics, knowledge, and tools to further control agent behavior.
