@@ -72,7 +72,7 @@ In this exercise, you will create an agent by using a template, and then test th
 
    ![Safe Travels template.](../media/select-template.png)
 
-1. In the upper-right of the page, select the ellipses (**...**) and select **Edit advanced settings**.
+1. In the upper-right of the page, select the ellipsis (**...**) and select **Edit advanced settings**.
 
 1. Validate that the selected *Solution* is **Lab Exercises**, the *Schema name* prefix is **fab**, and then select **Cancel**.
 
@@ -100,7 +100,7 @@ In this exercise, you will create an agent by using a template, and then test th
 
 1. If the **Test** pane is not visible, select the **Test** icon in the upper-right of the page.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Track between topics** to **On**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Track between topics** to **On**.
 
    ![Track between topics.](../media/track-between-topics.png)
 
@@ -268,7 +268,7 @@ In this exercise, you will create a new agent using natural language to answer q
 
 1. If the **Test** pane is not visible, select the **Test** icon in the upper-right of the page.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
 
    ![Show activity map.](../media/show-activity-map.png)
 
