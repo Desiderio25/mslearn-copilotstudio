@@ -136,9 +136,9 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 
 ### Task 3.1 – Add a document as a knowledge source
 
-1. Open a new browser tab and navigate to `https://github.com/MicrosoftLearning/mslearn-copilotstudio/raw/main/expenses/Expenses_Policy.docx` to download the [expenses policy document](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-copilotstudio/main/expenses/Expenses_Policy.docx) locally. This document contains details of the expenses policy for the fictional corporation.
+1. Open a new browser tab, navigate to `https://github.com/MicrosoftLearning/mslearn-copilotstudio/raw/main/expenses/Expenses_Policy.docx` and download the [expenses policy document](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-copilotstudio/main/expenses/Expenses_Policy.docx) locally. This document contains details of the expenses policy for the fictional corporation.
 
-1. Return to the **Copilot Studio** browser tab with the agent you created in Exercise 3.
+1. Return to the **Copilot Studio** browser tab with the agent you created in Exercise 2.
 
 1. Select the **Knowledge** tab to verify the knowledge sources defined in your agent (currently there should be none).
 
@@ -172,6 +172,7 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 1. For *Description*, enter `This knowledge source contains information on reimbursement of travel expenses.`.
 
 1. Select **Add to agent**.
+
 > [!NOTE]
 > Public website indexing may take several minutes. If responses are incomplete, wait a few minutes and test the agent again.
 
@@ -183,7 +184,7 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 
 1. Select **Dataverse**.
 
-1. Search for and select the *Expenses* table you created in Exercise 2
+1. Search for and select the *Expenses* table you created in Exercise 1.
 
    ![Screenshot of adding the Expenses table in Dataverse as knowledge to your agent in Copilot Studio.](../media/knowledge-add-dataverse.png)
 
@@ -239,7 +240,7 @@ Check whether the uploaded file has completed indexing. If indexing is still in 
 
 1. At the top of the **Test** pane, select the **Start new test session** icon **+**.
 
-1. Enter the following prompt:
+1. Enter and submit the following prompt:
 
    `What can I claim for expenses?`
 
@@ -261,9 +262,9 @@ Check whether the uploaded file has completed indexing. If indexing is still in 
 
 1. Enter the following prompt:
 
-   `What is the standard deduction for incidental expenses?`
+   `What are the limits for incidental expenses?`
 
-1. The agent should search all the knowledge sources and generate a response using the public website.
+1. The agent should search all the knowledge sources and generate a response that uses information from the public website.
 
    ![Screenshot of the conversation.](../media/knowledge-conversation-3.png)
 
@@ -303,14 +304,15 @@ In this exercise you will configure generative AI for the agent and for the gene
 
    ![Screenshot of generative answers node.](../media/generative-answers-node.png)
 
-1. Select **Edit** for **Data sources**.
+1. Select **Edit** under **Data sources**.
 
 1. Select and enable **Search only selected sources.**
 
 1. Select the **Public website** knowledge source.
 
-1. Select and enable **Web search**.
-  When enabled, Web search allows generative answers to supplement configured knowledge sources with public web information.
+1. Enable **Web search**.
+
+   When enabled, **Web search** allows generative answers to supplement configured knowledge sources with public web information.
    ![Screenshot of generative answers properties.](../media/generative-answers-properties.png)
 
 1. Select **Save**.
@@ -325,7 +327,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
 1. Enter the following prompt:
 
-   `What is the federal per diem rate?`
+   `What is the current exchange rate between the U.S. dollar and the euro?`
 
 1. The knowledge sources will not provide an answer but the agent will use generative answers to search the web to generate a response.
 
@@ -341,7 +343,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
 1. Select the **Create generative answers** node.
 
-1. Select **Edit** for **Data sources**.
+1. Select **Edit** under **Data sources**.
 
 1. Disable **Web search**.
 
@@ -357,7 +359,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
 1. Enter the following prompt:
 
-   `What is the federal per diem rate?`
+   `What is the current exchange rate between the U.S. dollar and the euro?`
 
 1. The knowledge sources and generative answers will not provide an answer. If no suitable grounded or generative response is available, the conversation may route to the Fallback topic.
 
@@ -405,7 +407,7 @@ In this exercise, you will publish the agent to Microsoft Teams, first ensuring 
 
 1. Select **Cancel** in the dialog box for **This site is trying to open Microsoft Teams (work or school)**.
 
-1. In the pop-up, select **Cancel** and select **Use the web app instead**.
+1. Select **Use the web app instead**.
 
 1. Select **Add** to add the agent to Teams.
 
