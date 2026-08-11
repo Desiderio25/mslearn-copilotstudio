@@ -163,13 +163,13 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 
 1. Select **Public websites**.
 
-1. In the **Public website link** text box, enter **`https://www.irs.gov/publications/p463`**. This official government public website has details on reimbursement of travel expenses that could be useful for your agent.
+1. In the **Public website link** text box, enter `https://www.irs.gov/publications/p463`. This official government public website has details on reimbursement of travel expenses that could be useful for your agent.
 
 1. Select **Add**.
 
-1. For *Name*, enter `Travel, Gift, and Car Expenses | Internal Revenue Service`.
+1. For **Name**, enter `Travel, Gift, and Car Expenses | Internal Revenue Service`.
 
-1. For *Description*, enter `This knowledge source contains information on reimbursement of travel expenses.`.
+1. For **Description**, enter `This knowledge source contains information on reimbursement of travel expenses.`.
 
 1. Select **Add to agent**.
 
@@ -184,7 +184,7 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 
 1. Select **Dataverse**.
 
-1. Search for and select the *Expenses* table you created in Exercise 1.
+1. Search for and select the **Expenses** table you created in Exercise 1.
 
    ![Screenshot of adding the Expenses table in Dataverse as knowledge to your agent in Copilot Studio.](../media/knowledge-add-dataverse.png)
 
@@ -196,11 +196,11 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 
 1. In the Copilot Studio agent, select the **Knowledge** tab.
 
-1. Select the ellipses (**⋮**) for the Dataverse table and select **Edit**.
+1. Select the ellipsis (**⋮**) for the Dataverse table and select **Edit**.
 
    ![Screenshot of editing a knowledge source for an agent in Copilot Studio.](../media/knowledge-edit.png)
 
-1. In the **Details** tab, for *Name*, enter `Expense Claims data`.
+1. In the **Details** tab, for **Name**, enter `Expense Claims data`.
 
 1. Select the **Synonyms** tab.
 
@@ -216,9 +216,9 @@ In this exercise, you will add knowledge sources to the agent to ground the agen
 
 1. Select the **Glossary** tab.
 
-1. For *Enter term*, enter `Incidental expenses`.
+1. For **Enter term**, enter `Incidental expenses`.
 
-1. For *Enter description*, enter `Minor, necessary business costs that arise in addition to a primary expense such as tips or fees.`.
+1. For **Enter description**, enter `Minor, necessary business costs that arise in addition to a primary expense such as tips or fees.`.
 
 1. Select **Save**.
 
@@ -230,11 +230,11 @@ Check whether the uploaded file has completed indexing. If indexing is still in 
 
 1. Check on the **Status** of your file upload. If it is still **In progress**, refresh every few minutes until it is **Ready**.
 
-### Task 3.6 - Test grounding
+### Task 3.6 – Test grounding
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
 
    ![Show activity map.](../media/show-activity-map.png)
 
@@ -284,7 +284,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
    ![Screenshot of knowledge settings for agent.](../media/knowledge-agent-settings.png)
 
-1. Select **Save**
+1. Select **Save**.
 
 1. In the upper-right of the Settings page, select **X** to close settings.
 
@@ -321,7 +321,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **Off** and **Track between topics** to **On**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **Off** and **Track between topics** to **On**.
 
 1. At the top of the **Test** pane, select the **Start new test session** icon **+**.
 
@@ -353,7 +353,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon and verify that **Show activity map when testing** is set to **Off** and **Track between topics** is set to **On**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon and verify that **Show activity map when testing** is set to **Off** and **Track between topics** is set to **On**.
 
 1. At the top of the **Test** pane, select the **Start new test session** icon **+**.
 
@@ -369,7 +369,7 @@ In this exercise you will configure generative AI for the agent and for the gene
 
 In this exercise, you will publish the agent to Microsoft Teams, first ensuring that Microsoft Entra ID authentication is enabled.
 
-### Task 5.1 - Microsoft Entra ID authentication
+### Task 5.1 – Microsoft Entra ID authentication
 
 1. In the upper-right of the agent page, select the **Settings** button.
 
@@ -383,11 +383,12 @@ In this exercise, you will publish the agent to Microsoft Teams, first ensuring 
 
 1. In the upper-right of the **Settings** page, select **X** to close settings.
 
-### Task 5.2 - Publish the agent
+### Task 5.2 – Publish the agent
 
 1. On the agent page, select **Publish** and select **Publish** again to confirm.
 
-### Task 5.3 - Microsoft Teams channel
+### Task 5.3 – Microsoft Teams channel
+
 > [!NOTE]
 > Publishing to Teams in this lab is intended for testing and learning purposes. Production deployments may require additional governance, security, and app approval processes.
 
