@@ -364,7 +364,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. In Copilot Studio, in the left-hand navigation, select **Tools**.
 
-1. Select **+ Add a tool**.
+1. Select **+ Add a tool**. In some experiences, this option appears as **+ New tool**.
 
 1. In the **Add tool** dialog, select the **Agent flow** tile.
 
@@ -398,7 +398,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select **Sign in** to create a connection.
 
-1. 1. In the **Sign into your account** dialog, select the account you are using for this lab environment (such as **MOD Administrator**). If prompted, select the **I have verified this request and trust the source** checkbox, and select **Allow access**.
+1. In the **Sign into your account** dialog, select the account you are using for this lab environment (such as **MOD Administrator**). If prompted, select the **I have verified this request and trust the source** checkbox, and select **Allow access**.
 
 1. For **Location** select **OneDrive for Business**.
 
@@ -470,7 +470,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select **+ Add a tool**.
 
-1. In the **Add tool** dialog, select the **Workflows** filter.
+1. In the **Add tool** dialog, select the **Flow** filter.
 
 1. Select the **Get Task List** workflow.
 
