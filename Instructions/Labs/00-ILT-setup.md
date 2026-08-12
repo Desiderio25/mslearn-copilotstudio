@@ -48,11 +48,17 @@ Before you start the lab exercises, you must create a development environment fo
    - **Create on behalf**: No
    - **Add a Dataverse data store?**: Yes
 
-1. Select **Next** and in the **Add Dataverse** section:
+   > [!IMPORTANT]
+   > Developer environments are no longer created with Dataverse enabled by default. You must expand **Change default settings** and enable Dataverse, otherwise the later exercises will not work.
+
+1. Expand **Change default settings** and enable **Dataverse** (or **Add a Dataverse data store**) with the following settings:
 
    - **Language**: English (United States)
    - **Currency**: USD ($)
    - **Deploy sample apps and data**: No
+
+   > [!NOTE]
+   > If your view of the admin center displays a **Next** button instead, select **Next** and enter the same settings in the **Add Dataverse** section.
 
 1. Select **Save** and wait until the state of your environment is **Ready** (you can use the **Refresh** button to update the display).
 
