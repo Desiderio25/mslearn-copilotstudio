@@ -119,7 +119,7 @@ In this exercise, you will create an IT support agent for a fictional company ca
 
 1. If prompted for the email address the agent should use when sending support requests, enter your admin email address, then select **Submit**.
 
-1. Select **Keep it** to accept the auto-generated instructions and create the agent.
+1. Review and accept the auto-generated instructions and create the agent.
 
 1. In the **Artifacts** panel on the right, select your agent to open its **Build** tab.
 
@@ -129,7 +129,7 @@ In this exercise, you will create an IT support agent for a fictional company ca
 
 1. Review the instructions that were generated from your description. They should describe the agent's purpose, tone, and general behavior.
 
-1. In the **Instructions** section, update the instructions to include the following guidelines:
+1. In the **Instructions** section, update the instructions by adding the following guidelines, then select **Save**:
 
    ```prompt
    ## Guidelines
@@ -178,9 +178,9 @@ In this exercise, you will test the agent and observe how it reasons before resp
    My laptop will not turn on at all.
    ```
 
-   Based on the instructions you wrote, the agent should decline to troubleshoot the hardware failure remotely, recommend contacting the IT desk directly, and offer to submit a support ticket on your behalf.
+   Based on the instructions you wrote, the agent should decline to troubleshoot the hardware failure remotely, recommend contacting the IT desk directly. The agent might also offer to submit a support ticket on your behalf.
 
-1. Follow the agent's prompts to provide your name, email, and a brief description of the issue.
+1. If prompted, provide your name, email, and a brief description of the issue.
 
 ### Task 3.4 – Refine instructions based on test results
 
