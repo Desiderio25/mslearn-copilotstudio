@@ -72,9 +72,9 @@ In this exercise, you will create an agent by using a template, and then test th
 
    ![Safe Travels template.](../media/select-template.png)
 
-1. In the upper-right of the page, select the ellipses (**...**) and select **Edit advanced settings**.
+1. In the upper-right of the page, select the ellipsis (**...**) and select **Edit advanced settings**.
 
-1. Validate that the selected *Solution* is **Lab Exercises** and the *Schema name* prefix is **fab** and select **Cancel**.
+1. Validate that the selected *Solution* is **Lab Exercises**, the *Schema name* prefix is **fab**, and then select **Cancel**.
 
 1. In the upper-right of the page, select **Create**.
 
@@ -90,7 +90,7 @@ In this exercise, you will create an agent by using a template, and then test th
 
 1. Select the **Topics** tab and select the **System** filter.
 
-1. Select the **Conversational Start** topic. Review the contents of the **Message** node. Note that the contents of the message are displayed in the **Test** pane.
+1. Select the **Conversation Start** topic. Review the contents of the **Message** node. Note that the contents of the message are displayed in the **Test** pane.
 
    ![Conversation Start topic from the Safe Travels template.](../media/safe-travels-conversation-start-topic.png)
 
@@ -100,7 +100,7 @@ In this exercise, you will create an agent by using a template, and then test th
 
 1. If the **Test** pane is not visible, select the **Test** icon in the upper-right of the page.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Track between topics** to **On**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Track between topics** to **On**.
 
    ![Track between topics.](../media/track-between-topics.png)
 
@@ -163,7 +163,7 @@ In this exercise, you will create a new agent using natural language to answer q
 
 1. Select **Update**.
 
-1. In the *Start building by describing what your agent needs to do* text box, Enter the following prompt:
+1. In the *Start building by describing what your agent needs to do* text box, enter the following prompt:
 
    ```prompt
    You are an agent that assists with questions related to claiming US government benefits.
@@ -189,7 +189,7 @@ In this exercise, you will create a new agent using natural language to answer q
 
 1. Select **Save**.
 
-1. In the **Select your agent's model** section, select **GPT-5 Auto (Preview)**, if available. Otherwise, select the default recommended GPT model.
+1. In the **Select your agent's model** section, select **GPT-5 Auto (Preview)**, if available. Otherwise, leave the default model selected.
 
 1. In the **Instructions** section, select **Edit**.
 
@@ -204,7 +204,7 @@ In this exercise, you will create a new agent using natural language to answer q
    > [!NOTE]
    > Agent instructions guide how the agent should behave, but they do not strictly enforce behavior. In later labs, you will learn how to change behavior by using topics, knowledge, and generative answers with restricted knowledge sources.
 
-1. In the **Suggested prompts** section, select **Add suggested prompts**.
+1. In the **Suggested prompts** section, select **+ Add suggested prompts**.
 
 1. For **Title**, enter `Health`.
 
@@ -268,7 +268,7 @@ In this exercise, you will create a new agent using natural language to answer q
 
 1. If the **Test** pane is not visible, select the **Test** icon in the upper-right of the page.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
 
    ![Show activity map.](../media/show-activity-map.png)
 

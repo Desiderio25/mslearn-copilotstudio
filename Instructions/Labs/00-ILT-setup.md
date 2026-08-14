@@ -25,7 +25,7 @@ Before you start the lab exercises, you must create a development environment fo
 
 ### Task 1.2 - Add Dataverse to the default environment
 
-1. Select the ellipses (**...**) for the **Contoso (default)** environment and select **Add Dataverse**.
+1. Select the ellipsis (**...**) for the **Contoso (default)** environment and select **Add Dataverse**.
 
    ![Add Dataverse to the default environment in the Power Platform Admin center.](../media/add-dataverse.png)
 
@@ -47,12 +47,12 @@ Before you start the lab exercises, you must create a development environment fo
    - **Get new features early**: No
    - **Create on behalf**: No
    - **Add a Dataverse data store?**: Yes
-
+   
 1. Select **Next** and in the **Add Dataverse** section:
 
    - **Language**: English (United States)
    - **Currency**: USD ($)
-   - **Deploy sample apps and data**: No
+   - **Deploy sample apps and data?**: No
 
 1. Select **Save** and wait until the state of your environment is **Ready** (you can use the **Refresh** button to update the display).
 
@@ -84,7 +84,7 @@ Before you start the lab exercises, you must create a development environment fo
 
 ### Task 1.4 - Create a solution
 
-1. In the left navigation pane, select the ellipses (**...**), and select **Solutions**.
+1. In the left navigation pane, select the ellipsis (**...**), and select **Solutions**.
 
 1. You should see several solutions including the *Default Solution* and the *Common Data Services Default Solution*.
 

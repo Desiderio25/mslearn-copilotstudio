@@ -3,7 +3,7 @@ lab:
   title: Use workflows as tools
   module: Incorporate workflows to enhance agent behavior
   description: In this lab, you will use Copilot to create an agent, create workflows, and add workflows as tools to the agent and to a topic.
-  duration: 45 minutes
+  duration: 60 minutes
   level: 200
   islab: true
   primarytopics:
@@ -22,7 +22,7 @@ In this exercise, you will:
 - Use tools in the agent and in topics
 - Test the agent
 
-This exercise will take approximately **45** minutes to complete.
+This exercise will take approximately **60** minutes to complete.
 
 ## What you will learn
 
@@ -123,7 +123,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
    ![Screenshot of details properties of the flow.](../media/workflow-details.png)
 
-1. In the **Details** pane, update **Flow name** to `Send Summary to Teams`.
+1. In the **Details** pane, update the **Flow name** to `Send Summary to Teams`.
 
 1. For **Description**, enter `Post a message to Teams with the summary of the task analysis`.
 
@@ -148,7 +148,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. Select your account.
 
-1. In the **Confirmation required** dialog, select the **I have verified this request and trust the source** checkbox, then select **Allow access**.
+1. If the **Confirmation required** dialog appears, select the **I have verified this request and trust the source** checkbox, then select **Allow access**.
 
 1. For **Post as**, select **Flow bot**.
 
@@ -190,7 +190,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. Select **+ Add a tool**.
 
-1. In the **Add tool** dialog, select the **Workflows** filter.
+1. In the **Add tool** dialog, select the **Flow** filter.
 
    ![Screenshot of adding a workflow as a tool.](../media/workflow-add-tool.png)
 
@@ -200,7 +200,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. In the **Details** section, for **Description**, enter `Sends a summary of the completed task analysis to a Microsoft Teams channel`.
 
-1. Expand **Additional details** and select or enter the following:
+1. Expand **Additional details**, then select and enter the following:
 
    - **When this tool may be used**: Agent may use this tool at any time
    - **Ask the end user before running**: No
@@ -208,7 +208,8 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
    - **Description**: `Please sign in to notify Teams`
 
 1. In the **Inputs** section, for *Fill using* select **Dynamically fill with AI**.
-  This allows the agent to determine the appropriate input value dynamically from the conversation context.
+  
+   This allows the agent to determine the appropriate input value dynamically from the conversation context.
 
 1. In the **Completion** section, for **After running**, select **Write the response with generative AI**.
 
@@ -229,7 +230,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. Enter the following instructions. Where the text shows a placeholder such as `<Send Summary to Teams>`, don't type the placeholder. Instead, type `/`, and then select the **Send Summary to Teams** tool from the list so that the tool is inserted as a reference:
 
-   ```prompt
+  ```prompt
    # Purpose
    The purpose of this agent is to analyze, categorize, and prioritize tasks, and to send a summary of the analysis to a Microsoft Teams channel.
 
@@ -249,13 +250,13 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
    ![Screenshot of referencing the workflow tool in the agent instructions.](../media/workflow-add-tool-to-instructions.png)
 
-1. Select **Save**.
+5. Select **Save**.
 
 ### Task 2.6 - Test the workflow tool in the agent
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
 
    ![Show activity map.](../media/show-activity-map.png)
 
@@ -363,7 +364,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. In Copilot Studio, in the left-hand navigation, select **Tools**.
 
-1. Select **+ Add a tool**.
+1. Select **+ Add a tool**. In some experiences, this option appears as **+ New tool**.
 
 1. In the **Add tool** dialog, select the **Agent flow** tile.
 
@@ -469,7 +470,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select **+ Add a tool**.
 
-1. In the **Add tool** dialog, select the **Workflows** filter.
+1. In the **Add tool** dialog, select the **Flow** filter.
 
 1. Select the **Get Task List** workflow.
 
@@ -522,7 +523,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **Off** and **Track between topics** to **On**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **Off** and **Track between topics** to **On**.
 
 1. At the top of the **Test** pane, select the **Start new test session** icon **+**.
 
