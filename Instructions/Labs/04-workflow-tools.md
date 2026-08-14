@@ -3,7 +3,7 @@ lab:
   title: Use workflows as tools
   module: Incorporate workflows to enhance agent behavior
   description: In this lab, you will use Copilot to create an agent, create workflows, and add workflows as tools to the agent and to a topic.
-  duration: 45 minutes
+  duration: 60 minutes
   level: 200
   islab: true
   primarytopics:
@@ -22,7 +22,7 @@ In this exercise, you will:
 - Use tools in the agent and in topics
 - Test the agent
 
-This exercise will take approximately **45** minutes to complete.
+This exercise will take approximately **60** minutes to complete.
 
 ## What you will learn
 
