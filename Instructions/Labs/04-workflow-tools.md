@@ -3,7 +3,7 @@ lab:
   title: Use workflows as tools
   module: Incorporate workflows to enhance agent behavior
   description: In this lab, you will use Copilot to create an agent, create workflows, and add workflows as tools to the agent and to a topic.
-  duration: 45 minutes
+  duration: 60 minutes
   level: 200
   islab: true
   primarytopics:
@@ -22,7 +22,7 @@ In this exercise, you will:
 - Use tools in the agent and in topics
 - Test the agent
 
-This exercise will take approximately **45** minutes to complete.
+This exercise will take approximately **60** minutes to complete.
 
 ## What you will learn
 
@@ -123,7 +123,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
    ![Screenshot of details properties of the flow.](../media/workflow-details.png)
 
-1. In the **Details** pane, update **Flow name** to `Send Summary to Teams`.
+1. In the **Details** pane, update the **Flow name** to `Send Summary to Teams`.
 
 1. For **Description**, enter `Post a message to Teams with the summary of the task analysis`.
 
@@ -148,7 +148,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. Select your account.
 
-1. In the **Confirmation required** dialog, select the **I have verified this request and trust the source** checkbox, then select **Allow access**.
+1. If the **Confirmation required** dialog appears, select the **I have verified this request and trust the source** checkbox, then select **Allow access**.
 
 1. For **Post as**, select **Flow bot**.
 
@@ -190,7 +190,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. Select **+ Add a tool**.
 
-1. In the **Add tool** dialog, select the **Workflows** filter.
+1. In the **Add tool** dialog, select the **Flow** filter.
 
    ![Screenshot of adding a workflow as a tool.](../media/workflow-add-tool.png)
 
@@ -200,7 +200,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. In the **Details** section, for **Description**, enter `Sends a summary of the completed task analysis to a Microsoft Teams channel`.
 
-1. Expand **Additional details** and select or enter the following:
+1. Expand **Additional details**, then select and enter the following:
 
    - **When this tool may be used**: Agent may use this tool at any time
    - **Ask the end user before running**: No
@@ -208,7 +208,8 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
    - **Description**: `Please sign in to notify Teams`
 
 1. In the **Inputs** section, for *Fill using* select **Dynamically fill with AI**.
-  This allows the agent to determine the appropriate input value dynamically from the conversation context.
+  
+   This allows the agent to determine the appropriate input value dynamically from the conversation context.
 
 1. In the **Completion** section, for **After running**, select **Write the response with generative AI**.
 
@@ -218,21 +219,44 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 ### Task 2.5 - Update agent instructions
 
+> [!IMPORTANT]
+> The instructions that Copilot generates when it creates an agent vary, and they're often long and general. Those instructions can cause the agent to answer from knowledge or ask the user for a list of tasks instead of calling your topics and tools. In this task, you replace the generated instructions with a specific set of instructions so that the agent behaves predictably in the remaining exercises.
+
 1. Select the **Overview** tab.
 
 1. In the **Instructions** section, select **Edit**.
 
-1. Under the *# Step-by-Step Instructions* in the agent instructions, add the following to the final step: `Use the ` and type `/` and select the **Send Summary to Teams** tool and then enter ` when the task analysis is complete.`
+1. Select all of the existing text in the **Instructions** box and delete it.
+
+1. Enter the following instructions. Where the text shows a placeholder such as `<Send Summary to Teams>`, don't type the placeholder. Instead, type `/`, and then select the **Send Summary to Teams** tool from the list so that the tool is inserted as a reference:
+
+```prompt
+   # Purpose
+   The purpose of this agent is to analyze, categorize, and prioritize tasks, and to send a summary of the analysis to a Microsoft Teams channel.
+
+   # General guidelines
+   - Maintain a professional and supportive tone.
+   - Always use the topics and tools listed below. Don't answer from your own knowledge.
+
+   # Skills
+   - Use the <Send Summary to Teams> tool to post a summary of the task analysis to Microsoft Teams.
+
+   # Step-by-step instructions
+   1. Analyze tasks
+      - Categorize and prioritize the tasks that the user provides.
+   2. Send the results
+      - Use the <Send Summary to Teams> tool when the task analysis is complete.
+   ```
 
    ![Screenshot of referencing the workflow tool in the agent instructions.](../media/workflow-add-tool-to-instructions.png)
 
-1. Select **Save**.
+5. Select **Save**.
 
 ### Task 2.6 - Test the workflow tool in the agent
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
 
    ![Show activity map.](../media/show-activity-map.png)
 
@@ -258,7 +282,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 ### Task 3.1 - Create an Excel file
 
-[!NOTE]
+> [!NOTE]
 > If you have issues creating this spreadsheet you can download a copy from this link [Download the file](../../Allfiles/Operations%20tasks.xlsx)
 
 1. In Copilot Studio, select the **App launcher** icon in the upper-left corner, then select **OneDrive**.
@@ -340,7 +364,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. In Copilot Studio, in the left-hand navigation, select **Tools**.
 
-1. Select **+ Add a tool**.
+1. Select **+ Add a tool**. In some experiences, this option appears as **+ New tool**.
 
 1. In the **Add tool** dialog, select the **Agent flow** tile.
 
@@ -374,7 +398,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select **Sign in** to create a connection.
 
-1. In the **Sign into your account** dialog, select the account you are using for this lab environment (such as **MOD Administrator**), select the **I have verified this request and trust the source** checkbox, and select **Allow access**.
+1. In the **Sign into your account** dialog, select the account you are using for this lab environment (such as **MOD Administrator**). If prompted, select the **I have verified this request and trust the source** checkbox, and select **Allow access**.
 
 1. For **Location** select **OneDrive for Business**.
 
@@ -446,7 +470,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select **+ Add a tool**.
 
-1. In the **Add tool** dialog, select the **Workflows** filter.
+1. In the **Add tool** dialog, select the **Flow** filter.
 
 1. Select the **Get Task List** workflow.
 
@@ -464,6 +488,8 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 1. In the **Inputs** section, for **Fill using** select **Custom value** and select the **Priority** global variable.
 
    ![Screenshot of the inputs of workflow as a tool.](../media/workflow-tool-inputs.png)
+
+1. Select the ellipsis (**...**) next to the **Global.Priority** value, select **Formula** (**fx**), enter `Text(Global.Priority)`, and then select **Insert**. The **Priority** question stores a choice value, and the workflow requires text, so this formula converts the value and prevents a type mismatch error.
 
 1. In the **Completion** section, for **After running**, select **Write the response with generative AI**.
 
@@ -487,7 +513,9 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. In the **Instructions** section, select **Edit**.
 
-1. Under the *## Skills* in the agent instructions, add the following to the final step: `Use the ` and type `/` and select the **Priority Tasks** topic and then enter ` to get the task list.`
+1. In the *# Skills* section, add a new line, enter `- Use the `, type `/`, select the **Priority Tasks** topic, and then enter ` topic to get the task list.`
+
+1. In the *# Step-by-step instructions* section, under **1. Analyze tasks**, add a new line, enter `- Use the `, type `/`, select the **Priority Tasks** topic, and then enter ` topic to get the task list.`
 
 1. Select **Save**.
 
@@ -495,7 +523,7 @@ In this exercise, you will use Copilot to create a topic from a description, cre
 
 1. Select the **Test** icon in the upper-right of the page to open the testing pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **Off** and **Track between topics** to **On**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **Off** and **Track between topics** to **On**.
 
 1. At the top of the **Test** pane, select the **Start new test session** icon **+**.
 
@@ -504,6 +532,9 @@ In this exercise, you will use Copilot to create a topic from a description, cre
    `Analyze the task list`
 
 1. The **Priority Tasks** topic will be shown.
+
+   > [!NOTE]
+   > If the agent answers without opening the **Priority Tasks** topic, verify on the **Overview** tab that the agent instructions reference the **Priority Tasks** topic and the **Send Summary to Teams** tool as inserted references, and then start a new test session.
 
 1. Select **Medium**.
 

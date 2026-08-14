@@ -364,7 +364,7 @@ In this exercise, you will test topic routing and confirm the conversation follo
 
 1. Select the **Test** icon in the upper-right of the page to open the **Test** pane.
 
-1. In the **Test** pane, select the ellipses (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
+1. In the **Test** pane, select the ellipsis (**...**) next to the variables **{x}** icon, and toggle **Show activity map when testing** to **On** and **Track between topics** to **Off**.
 
    ![Show activity map.](../media/show-activity-map.png)
 

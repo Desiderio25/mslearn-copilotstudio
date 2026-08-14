@@ -25,7 +25,7 @@ Before you start the lab exercises, you must create a development environment fo
 
 ### Task 1.2 - Add Dataverse to the default environment
 
-1. Select the ellipses (**...**) for the **Contoso (default)** environment and select **Add Dataverse**.
+1. Select the ellipsis (**...**) for the **Contoso (default)** environment and select **Add Dataverse**.
 
    ![Add Dataverse to the default environment in the Power Platform Admin center.](../media/add-dataverse.png)
 
@@ -38,18 +38,21 @@ Before you start the lab exercises, you must create a development environment fo
    - **Type**: Developer
    - **Region**: default region
    - **Name**: *Your name*
+
+   ![Create an environment in the Power Platform Admin center.](../media/create-environment.png)
+
+1. Expand **Change default settings** and configure the following:
    - **Environment group**: None
    - **Make this a Managed Environment**: No
    - **Get new features early**: No
    - **Create on behalf**: No
-
-   ![Create an environment in the Power Platform Admin center.](../media/create-environment.png)
-
+   - **Add a Dataverse data store?**: Yes
+   
 1. Select **Next** and in the **Add Dataverse** section:
 
    - **Language**: English (United States)
    - **Currency**: USD ($)
-   - **Deploy sample apps and data**: No
+   - **Deploy sample apps and data?**: No
 
 1. Select **Save** and wait until the state of your environment is **Ready** (you can use the **Refresh** button to update the display).
 
@@ -60,16 +63,16 @@ Before you start the lab exercises, you must create a development environment fo
 
 1. In a new browser tab, navigate to `https://copilotstudio.microsoft.com/` and sign in if prompted.
 
-  > [!NOTE]  
-  > If you experience issues loading Copilot Studio or your environment:
-  > - First, capture your environment ID (GUID) from the Power Platform admin center:
-  >   1. Open the environment you created at `https://admin.powerplatform.microsoft.com/manage/environments`.
-  >   2. Locate the environment ID in the URL (a long string such as `12345678-90ab-cdef-1234-567890abcdef`).
-  >   3. Copy and save this value.
-  > - Then try accessing your environment directly by pasting your ID into the following URL:
-  >   ```
-  >   https://copilotstudio.microsoft.com/environments/<your-environment-id>/home
-  >   ```
+   > [!NOTE]  
+   > If you experience issues loading Copilot Studio on your environment:
+   > - First, capture your environment ID (GUID) from the Power Platform admin center:
+   >   1. Open the environment you created at `https://admin.powerplatform.microsoft.com/manage/environments`.
+   >   2. Locate the environment ID in the URL (a long string such as `12345678-90ab-cdef-1234-567890abcdef`).
+   >   3. Copy and save this value.
+   > - Then try accessing your environment directly by pasting your ID into the following URL:
+   >   ```
+   >   https://copilotstudio.microsoft.com/environments/<your-environment-id>/home
+   >   ```
 
 1. If prompted, select **Get Started** and keep the default country or region settings.
 
@@ -81,7 +84,7 @@ Before you start the lab exercises, you must create a development environment fo
 
 ### Task 1.4 - Create a solution
 
-1. In the left navigation pane, select the ellipses (**...**), and select **Solutions**.
+1. In the left navigation pane, select the ellipsis (**...**), and select **Solutions**.
 
 1. You should see several solutions including the *Default Solution* and the *Common Data Services Default Solution*.
 
@@ -100,6 +103,8 @@ Before you start the lab exercises, you must create a development environment fo
 1. For **Name**, enter `fabrikam`
 
 1. For **Prefix**, enter `fab`
+
+1. Select **Save** to create the publisher.
 
 1. Verify that **Fabrikam (fabrikam)** is selected in the **Publisher** drop-down.
 
