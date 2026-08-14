@@ -230,7 +230,7 @@ In this exercise, you create a workflow that sends a message to Microsoft Teams.
 
 1. Enter the following instructions. Where the text shows a placeholder such as `<Send Summary to Teams>`, don't type the placeholder. Instead, type `/`, and then select the **Send Summary to Teams** tool from the list so that the tool is inserted as a reference:
 
-```prompt
+  ```prompt
    # Purpose
    The purpose of this agent is to analyze, categorize, and prioritize tasks, and to send a summary of the analysis to a Microsoft Teams channel.
 
