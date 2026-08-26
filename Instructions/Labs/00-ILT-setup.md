@@ -36,7 +36,7 @@ Before you start the lab exercises, you must create a development environment fo
 1. In the **Environments** page, select **+ New** to create a new environment with the following settings:
 
    - **Type**: Developer
-   - **Region**: default region
+   - **Macro Region Geography**: North America
    - **Name**: *Your name*
 
    ![Create an environment in the Power Platform Admin center.](../media/create-environment.png)
