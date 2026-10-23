@@ -51,10 +51,15 @@ To complete this exercise, you need:
 
 Create a standalone data source for this exercise.
 
-1. Open the SharePoint site that you use for the exercise, and then select **New** > **List**. Under **Create from blank**, select **List**.
+> [!NOTE]
+> If you don't have a SharePoint site, create one before proceeding:
+>
+> 1. Go to [Microsoft 365](https://www.microsoft365.com/), sign in with your work or school account, and open **SharePoint** from the app launcher (select **All apps** if necessary). On the SharePoint start page, select **+ Create site** > **Team site**. If prompted to choose a template, select **Standard team**, and then select **Use template**.
+> 1. Enter `PL7008 Equipment <your initials>` as the site name, replacing `<your initials>` with a unique value. Select **Next**, complete the required settings, keep the site **Private**, confirm the language, and select **Create site**. If prompted to add members, you can skip adding them and select **Finish**. Wait for the new site to open.
+>
+> If **Create site** isn't available or you don't have permission to create a site, ask your Microsoft 365 administrator to create one or grant you access to an existing site where you can create lists.
 
-   > [!NOTE]
-   > If you don't have a SharePoint site, create one or request access to an existing site before proceeding.
+1. Open the SharePoint site that you use for the exercise, and then select **New** > **List**. Under **Create from blank**, select **List**.
 
 1. Enter `PL7008 Equipment Inventory <your initials>` as the list name, replacing `<your initials>` with a unique value, and then select **Create**.
 
