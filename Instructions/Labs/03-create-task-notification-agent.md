@@ -91,6 +91,7 @@ To complete this exercise, you need:
    ## Boundaries
 
    - Do not guess or infer the recipient email address. Always confirm it with the user.
+   - If a due date omits the year, preserve the month and day and use this year if the date has not passed; otherwise, use next year. Do not ask for year clarification or suggest a different month or day. Include the resolved date in the normal confirmation before sending.
    - Do not send notifications to multiple recipients in a single workflow call.
    - If the user cancels at any point, acknowledge the cancellation and do not send the email.
    ```
@@ -159,7 +160,7 @@ To complete this exercise, you need:
    | --- | --- |
    | Type | **Text** |
    | Input name | `Due Date` |
-   | Description | `The due date of the task, stated as the user provided it, such as October 15, 2026.` |
+   | Description | `The task's due date, such as October 15. When the year is omitted, preserve the month and day and use this year if the date has not passed; otherwise, use next year.` |
 
 1. Select **Save** to save your progress.
 
@@ -290,7 +291,7 @@ In the **Inputs** section, configure each input:
 
 1. For **Task Details**, confirm the description reads: `A brief description of what the task involves, including any relevant context.`
 
-1. For **Due Date**, confirm the description reads: `The due date of the task, stated as the user provided it, such as October 15, 2026.`
+1. For **Due Date**, confirm the description reads: `The task's due date, such as October 15. When the year is omitted, preserve the month and day and use this year if the date has not passed; otherwise, use next year.`
 
 ### Task 3.4 - Configure the workflow outputs
 
@@ -322,6 +323,8 @@ In the **Inputs** section, configure each input:
 
 Open the **Preview** tab in Copilot Studio. Use the following tasks to run all four test paths.
 
+If you are retesting an existing agent, first update and save the agent instructions from Task 1.1 and the **Due Date** input description from Task 3.3, then start a new conversation.
+
 ### Task 4.1 - Test the success path
 
 1. At the top of the **Preview** pane, start a new conversation session.
@@ -329,12 +332,13 @@ Open the **Preview** tab in Copilot Studio. Use the following tasks to run all f
 1. Enter the following message exactly. Replace `<your email address>` with your own work or school email address.
 
    ```prompt
-   Send a task notification to <your email address> for the task "Server Patch Update." The task involves applying monthly security patches to production servers. It's due October 15, 2026.
+   Send a task notification to <your email address> for the task "Server Patch Update." The task involves applying monthly security patches to production servers. It's due on the next October 15 (this year if it hasn't passed; otherwise, next year).
    ```
 
    **Expected behavior**:
 
    - The agent extracts the recipient email, task title, task details, and due date from the message.
+   - The agent uses this year's October 15 if it has not passed; otherwise, it uses next year's October 15. It does not ask for year clarification or suggest a different month or day.
    - The agent presents the confirmation prompt you configured.
 
 1. Approve the confirmation when prompted.
@@ -350,6 +354,8 @@ Open the **Preview** tab in Copilot Studio. Use the following tasks to run all f
    - The subject line reads `Task notification: Server Patch Update`.
    - The body contains the task title, task details, and due date.
    - The closing line reads `This notification was sent by the Contoso Task Alert Agent.`
+
+1. Start a new conversation and repeat the prompt using `It's due October 15.` as the final sentence. Verify that the agent applies the same year-selection rule without asking for year clarification or suggesting a different date. Cancel at the normal sending confirmation to avoid a second email.
 
 **Completion criteria for Task 4.1**: The email arrives with the correct subject, body, and formatting, and the agent confirms the action in the conversation.
 
@@ -373,7 +379,7 @@ Open the **Preview** tab in Copilot Studio. Use the following tasks to run all f
    - **Task title**: `Backup Validation.`
    - **Recipient email**: Your own work or school email address.
    - **Task details**: `Verify that nightly backups completed successfully and review the backup logs.`
-   - **Due date**: `October 20, 2026`
+   - **Due date**: `The next October 20 (this year if it hasn't passed; otherwise, next year).`
 
 1. When the agent presents the confirmation prompt, approve it.
 
@@ -391,7 +397,7 @@ Open the **Preview** tab in Copilot Studio. Use the following tasks to run all f
 1. Enter the following message. Replace `<your email address>` with your own work or school email address.
 
    ```text
-   Send a task notification to <your email address> for "Access Review." The task involves reviewing and removing inactive user accounts. It's due November 1, 2026.
+   Send a task notification to <your email address> for "Access Review." The task involves reviewing and removing inactive user accounts. It's due on the next November 1 (this year if it hasn't passed; otherwise, next year).
    ```
 
 1. When the agent presents the confirmation prompt, decline it by entering:
@@ -426,7 +432,7 @@ This test runs the workflow directly with a deliberately malformed email address
    | Recipient Email | `not-an-email` |
    | Task Title | `Incident Report` |
    | Task Details | `Document the root cause of a recent service outage.` |
-   | Due Date | `November 5, 2026` |
+   | Due Date | `November 5` |
 
 1. Select **Run**. The workflow encounters an error at the **Send an email (V2)** step because `not-an-email` isn't a valid address.
 
