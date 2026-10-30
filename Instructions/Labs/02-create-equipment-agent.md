@@ -177,7 +177,7 @@ Create a standalone data source for this exercise.
 
 ![Copilot Studio home page showing the Agent and Workflow options.](../media/copilot-studio-home-page.png)
 
-1. Go to [Microsoft Copilot Studio](https://copilotstudio.preview.microsoft.com/) at `https://copilotstudio.preview.microsoft.com/` and sign in.
+1. Go to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com/) at `https://copilotstudio.microsoft.com/` and sign in.
 
 1. Confirm that the correct environment is selected.
 
@@ -221,7 +221,7 @@ Create a standalone data source for this exercise.
 
 1. Select the **Get items** action, and then select **+ Add** to create your SharePoint connection.
 
-1. In the **Tools** section, select the newly added SharePoint connector. In **Tool details**, set the tool name to `Get equipment inventory`. In **Description for AI**, enter `Retrieves the current Contoso equipment inventory, including category, location, price, available units, intended use, and accessibility notes. Use for equipment availability and recommendation requests. This tool reads inventory and doesn't reserve or order items.`
+1. In the **Tools** section, select the newly added SharePoint connector. In **Tool details**, set the tool name to `Get equipment inventory`. In **Description for Intelligence**, enter `Retrieves the current Contoso equipment inventory, including category, location, price, available units, intended use, and accessibility notes. Use for equipment availability and recommendation requests. This tool reads inventory and doesn't reserve or order items.`
 
 1. In the **Inputs** section, select **Custom** next to each input and configure the values as follows:
 
