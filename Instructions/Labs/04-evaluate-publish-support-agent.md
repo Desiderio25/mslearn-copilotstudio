@@ -207,7 +207,7 @@ You create four evaluation conversations that cover the most important scenarios
     ```
 
    > [!NOTE]
-   > Expected agent responses are for your own reference during manual review. General quality evaluates standards such as relevance and completeness. It doesn't compare the actual response against the expected response.
+   > In this General quality evaluation, expected agent responses are for your own reference during manual review. General quality evaluates standards such as relevance and completeness. It doesn't compare the actual response against the expected response or verify connected-agent invocation. You configure an automated delegation check in Task 2.4.
 
 1. Select **Done**, and then select **Save**.
 
@@ -221,11 +221,24 @@ You create four evaluation conversations that cover the most important scenarios
 | Out-of-scope boundary | Can you recommend a good restaurant near the office for a team lunch? | I can only help with Contoso IT and HR support topics, so I can't recommend a restaurant. |
 | Connected-agent delegation | I submitted a ticket about my laptop three days ago, and nobody has responded. I need to speak with someone urgently. What should I do? | For urgent help with your laptop ticket, call the IT Help Desk at extension 4357. The help desk is available Monday through Friday, 8 AM to 6 PM. |
 
+### Task 2.4 - Add an automated delegation check
+
+1. Save **Contoso support release evaluation**, then repeat Task 2.1 to create a separate evaluation named `Contoso escalation delegation evaluation`.
+
+1. Add only the **Connected-agent delegation** conversation from Task 2.3, including its expected agent response. Keep the other three conversations in the original evaluation; they don't require escalation.
+
+1. In **Configure test set**, select **Add test method**, and then select **Capability use**. Keep **General quality** for response-quality scoring.
+
+1. Configure the delegation conversation's expected capability to require invocation of `Contoso Escalation Agent <your initials>`, the specialist you connected in Task 1.4. Select that connected-agent capability, not a general capability or the policy agent itself, and save the evaluation.
+
+   > [!IMPORTANT]
+   > The expected capability is the automated assertion: the check should fail when the specialist isn't invoked, even if the main agent gives a plausible answer or mentions extension 4357. Expected response text alone doesn't assert delegation. If your preview environment doesn't expose the connected specialist as an expected capability, this check can't verify delegation there. Confirm availability with your instructor or administrator; don't treat a General quality score or a Keyword match on `4357` as proof of invocation.
+
 ## Exercise 3 - Run the baseline evaluation and observe the defect
 
 ### Task 3.1 - Run the evaluation
 
-1. On the **Evaluate** page, confirm that all four conversations are listed.
+1. On the **Evaluate** page, open **Contoso support release evaluation** and confirm that all four conversations are listed.
 
 1. Select **Run**.
 
@@ -236,9 +249,11 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Wait for the evaluation run to complete. If the **evaluation is ready** notification appears, select **View results**. You can also open the completed run from the **Evaluations** list.
 
+1. Open **Contoso escalation delegation evaluation** and run it as well. Wait for it to complete before changing the agent's instructions.
+
 ### Task 3.2 - Review baseline results
 
-1. Open the completed evaluation run, if not already open.
+1. Open the completed baseline run of **Contoso support release evaluation**.
 
 1. Review the General quality score for each conversation. Record your observations in the table below.
 
@@ -249,15 +264,18 @@ You create four evaluation conversations that cover the most important scenarios
    | Out-of-scope restaurant request | |
    | Unresolved ticket escalation | |
 
-1. Select the **Unresolved ticket escalation** conversation to expand the detail view.
+1. Open the baseline run of **Contoso escalation delegation evaluation**. Record the **Capability use** result for its delegation conversation. It should fail because the deliberate instruction defect prevents the expected specialist invocation. A high General quality score doesn't override this failure.
 
-1. Read the agent's actual response to the user message. Verify that the agent directs the user to the IT Help Desk, provides extension 4357, and explains that it can't connect the user to a person directly.
+1. Select the delegation conversation to expand the detail view. Read the Capability use result and any explanation or invocation details to investigate the failed check.
 
-1. Compare this response to the expected agent response, and check whether the main agent delegated to the connected escalation specialist. Although the actual response might include escalation contact information, it doesn't delegate the request as expected.
+1. Compare the actual response to the expected agent response. The defective agent might decline to connect the user to a person or direct them to search the employee portal. Even if it supplies extension 4357, the Capability use check should fail when it doesn't invoke the specialist.
+
+   > [!NOTE]
+   > Agent behavior can vary. If Capability use passes in the baseline, inspect the invocation details and verify that the original defective instruction is still saved. Record the observed result rather than assuming a failure.
 
 ### Task 3.3 - Identify the defect
 
-1. Based on your review of the evaluation results, identify the cause of the low-quality escalation response.
+1. Based on your review of the Capability use result and conversation details, identify the instruction that conflicts with escalation delegation.
 
 1. Return to the **Build** tab and locate this statement in the **Scope boundaries** section of the agent's instructions:
 
@@ -297,15 +315,17 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Wait for the evaluation run to complete.
 
+1. Open **Contoso escalation delegation evaluation**. Confirm that its conversation and required escalation-agent capability are unchanged, and then run it again. Wait for this run to complete.
+
 ### Task 5.2 - Compare results
 
 1. If the results view is not displayed, select the latest evaluation run to open its results.
 
-1. Compare the General quality result and actual response for the delegation conversation between the baseline run and this run. The score might change, but the updated response must show successful delegation and include the specific escalation contact.
+1. In **Contoso escalation delegation evaluation**, compare the **Capability use** result between the baseline run and the latest run. It should change from **Fail** to **Pass**, confirming that the expected escalation specialist was invoked. If it still fails, review the saved instruction and connected-agent configuration before proceeding.
 
-1. Select the conversation detail to read the agent's updated response. Confirm that the connected escalation specialist provides the IT Help Desk extension when the user asks for escalation.
+1. Select the conversation detail to read the agent's updated response. Confirm that the connected escalation specialist provides the IT Help Desk extension 4357. Compare General quality scores as a separate response-quality measure; neither a high score nor contact information alone proves delegation.
 
-1. Review the other three conversations and confirm that the instruction change didn't reduce their scores.
+1. Return to **Contoso support release evaluation**. Review all four conversations and confirm that the instruction change didn't reduce the other three conversations' General quality scores.
 
 > [!NOTE]
 > Copilot Studio saves each evaluation run separately. Compare the latest run with the earlier baseline run after you save the corrected agent.
@@ -406,11 +426,12 @@ You have completed this exercise when you can confirm all of the following:
 - [ ] The Contoso Policy Agent is created with a unique name that includes your initials.
 - [ ] The Contoso Escalation Agent is created, tested, and published in the same environment.
 - [ ] The escalation specialist is connected to the policy agent with a distinct routing description.
-- [ ] Four evaluation conversations are saved in the Evaluate page.
-- [ ] A baseline evaluation run is complete, and the escalation response lacks a specific support contact.
+- [ ] Four conversations are saved in Contoso support release evaluation.
+- [ ] A separate delegation evaluation requires invocation of the connected escalation specialist through Capability use.
+- [ ] Both baseline evaluations are complete, and you recorded the delegation conversation's Capability use result and investigated any unexpected pass.
 - [ ] You can identify the specific instruction text that caused the escalation defect.
 - [ ] The corrected instructions allow the main agent to delegate escalation requests to the connected specialist.
-- [ ] A second evaluation run shows successful delegation and includes the IT Help Desk extension.
+- [ ] The delegation evaluation rerun passes Capability use, and the response includes IT Help Desk extension 4357.
 - [ ] The agent is published and the Teams + Microsoft 365 channel is added.
 - [ ] You accessed the agent in Microsoft Teams, contacted your administrator for approval, or documented the fallback validation path.
 - [ ] You validated in-scope answers, boundary behavior, and escalation behavior through the published Teams channel or the available fallback path.
