@@ -200,32 +200,33 @@ You create four evaluation conversations that cover the most important scenarios
    What are the IT Help Desk hours?
    ```
 
-1. Optionally, add this expected agent response:
+1. Add this expected agent response:
 
     ```text
     The IT Help Desk is available Monday through Friday, 8 AM to 6 PM in your local time zone.
     ```
 
-   > [!NOTE]
-   > Expected agent responses are for your own reference during manual review. General quality evaluates standards such as relevance and completeness. It doesn't compare the actual response against the expected response.
-
 1. Select **Done**, and then select **Save**.
 
 ### Task 2.3 - Create the remaining conversations
 
-1. Repeat steps 1 through 4 from the previous task to add each conversation listed in the following table:
+1. Repeat steps 1 through 4 from the previous task for each conversation in the following table. Enter both the user question and the expected agent response.
 
-| Conversation | User question | Expected agent response |
-| --- | --- | --- |
-| Ambiguity and clarification | I need help with my benefits. | What would you like help with: benefits enrollment, leave requests, or another HR topic? |
-| Out-of-scope boundary | Can you recommend a good restaurant near the office for a team lunch? | I can only help with Contoso IT and HR support topics, so I can't recommend a restaurant. |
-| Connected-agent delegation | I submitted a ticket about my laptop three days ago, and nobody has responded. I need to speak with someone urgently. What should I do? | For urgent help with your laptop ticket, call the IT Help Desk at extension 4357. The help desk is available Monday through Friday, 8 AM to 6 PM. |
+   | Conversation | User question | Expected agent response |
+   | --- | --- | --- |
+   | Ambiguity and clarification | I need help with my benefits. | What would you like help with: benefits enrollment, leave requests, or another HR topic? |
+   | Out-of-scope boundary | Can you recommend a good restaurant near the office for a team lunch? | I can only help with Contoso IT and HR support topics, so I can't recommend a restaurant. |
+   | Unresolved ticket escalation | I submitted a ticket about my laptop three days ago, and nobody has responded. I need to speak with someone urgently. What should I do? | Call the IT Help Desk at extension 4357 for urgent help with your unresolved laptop ticket. |
+
+1. In the **Configure test set** panel, select **Add test method**, choose **Compare meaning**, and keep **General quality**. Select **Save**.
+
+   **Compare meaning** scores the actual response against the expected response without requiring exact wording. **General quality** checks relevance and completeness without using the expected response. For the escalation case, the expected response specifies contact information supplied by the specialist: IT Help Desk extension `4357`.
 
 ## Exercise 3 - Run the baseline evaluation and observe the defect
 
 ### Task 3.1 - Run the evaluation
 
-1. On the **Evaluate** page, confirm that all four conversations are listed.
+1. On the **Evaluate** page, confirm that all four conversations have expected responses and that **Compare meaning** and **General quality** are configured.
 
 1. Select **Run**.
 
@@ -240,24 +241,25 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Open the completed evaluation run, if not already open.
 
-1. Review the General quality score for each conversation. Record your observations in the table below.
+1. Review the **Compare meaning** and **General quality** results for each conversation. Record your observations in the table below.
 
-   | Conversation | Observed General quality result |
-   | --- | --- |
-   | IT Help Desk hours | |
-   | Vague benefits question | |
-   | Out-of-scope restaurant request | |
-   | Unresolved ticket escalation | |
+   | Conversation | Compare meaning result | General quality result |
+   | --- | --- | --- |
+   | IT Help Desk hours | | |
+   | Vague benefits question | | |
+   | Out-of-scope restaurant request | | |
+   | Unresolved ticket escalation | | |
 
-1. Select the **Unresolved ticket escalation** conversation to expand the detail view.
+1. Locate the laptop-ticket question. With the deliberate instruction defect, expect **Compare meaning** to flag the response as a failure: the agent directs the user to search the employee portal instead of giving IT Help Desk extension `4357`. The response might still pass **General quality**.
 
-1. Read the agent's actual response to the user message. Verify that the agent directs the user to the IT Help Desk, provides extension 4357, and explains that it can't connect the user to a person directly.
+1. Expand the conversation to review the actual response and diagnose the mismatch.
 
-1. Compare this response to the expected agent response, and check whether the main agent delegated to the connected escalation specialist. Although the actual response might include escalation contact information, it doesn't delegate the request as expected.
+   > [!NOTE]
+   > **Compare meaning** detects missing or incorrect contact guidance in the response. It doesn't verify which agent was invoked. In Task 4.1, use **Preview** to verify the handoff itself.
 
 ### Task 3.3 - Identify the defect
 
-1. Based on your review of the evaluation results, identify the cause of the low-quality escalation response.
+1. Based on the failed **Compare meaning** result and the response details, identify why the agent gave portal guidance instead of the specialist's contact information.
 
 1. Return to the **Build** tab and locate this statement in the **Scope boundaries** section of the agent's instructions:
 
@@ -279,7 +281,7 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Select **Save**.
 
-1. In the **Preview** tab, start a new conversation and send the message `I need to speak to someone about my laptop ticket.` Confirm that the main agent delegates the request and the response provides extension 4357.
+1. In the **Preview** tab, start a new conversation and send the message `I need to speak to someone about my laptop ticket.` Check the activity trace to confirm that the main agent invoked `Contoso Escalation Agent <your initials>`, and verify that the response provides extension `4357`.
 
 1. Start another conversation and send `What are the IT Help Desk hours?` Confirm that the main agent answers the routine policy question without delegating it to the escalation specialist.
 
@@ -289,7 +291,7 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Select **Evaluate** in the top navigation, open **Contoso support release evaluation**, and then select **Configuration**.
 
-1. Confirm that your four conversations are still listed.
+1. Confirm that the same four conversations, expected responses, and test methods are still configured.
 
 1. Select **Run** or **Run again**.
 
@@ -301,11 +303,9 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. If the results view is not displayed, select the latest evaluation run to open its results.
 
-1. Compare the General quality result and actual response for the delegation conversation between the baseline run and this run. The score might change, but the updated response must show successful delegation and include the specific escalation contact.
+1. Compare the **Compare meaning** result for the unresolved ticket in the baseline and the rerun. Expect it to change from **Fail** to **Pass**. Open the conversation detail and confirm that the updated response directs the user to call IT Help Desk extension `4357` instead of searching the employee portal.
 
-1. Select the conversation detail to read the agent's updated response. Confirm that the connected escalation specialist provides the IT Help Desk extension when the user asks for escalation.
-
-1. Review the other three conversations and confirm that the instruction change didn't reduce their scores.
+1. Review both test method results for the other three conversations and check for regressions.
 
 > [!NOTE]
 > Copilot Studio saves each evaluation run separately. Compare the latest run with the earlier baseline run after you save the corrected agent.
@@ -406,11 +406,11 @@ You have completed this exercise when you can confirm all of the following:
 - [ ] The Contoso Policy Agent is created with a unique name that includes your initials.
 - [ ] The Contoso Escalation Agent is created, tested, and published in the same environment.
 - [ ] The escalation specialist is connected to the policy agent with a distinct routing description.
-- [ ] Four evaluation conversations are saved in the Evaluate page.
-- [ ] A baseline evaluation run is complete, and the escalation response lacks a specific support contact.
+- [ ] Four evaluation conversations with expected responses are saved with **Compare meaning** and **General quality** on the **Evaluate** page.
+- [ ] The baseline evaluation flags the unresolved ticket response because it doesn't provide IT Help Desk extension `4357`.
 - [ ] You can identify the specific instruction text that caused the escalation defect.
-- [ ] The corrected instructions allow the main agent to delegate escalation requests to the connected specialist.
-- [ ] A second evaluation run shows successful delegation and includes the IT Help Desk extension.
+- [ ] **Preview** confirms that the corrected instructions allow the main agent to delegate escalation requests to the connected specialist.
+- [ ] The unresolved ticket response passes **Compare meaning** in the second evaluation and includes IT Help Desk extension `4357`.
 - [ ] The agent is published and the Teams + Microsoft 365 channel is added.
 - [ ] You accessed the agent in Microsoft Teams, contacted your administrator for approval, or documented the fallback validation path.
 - [ ] You validated in-scope answers, boundary behavior, and escalation behavior through the published Teams channel or the available fallback path.
