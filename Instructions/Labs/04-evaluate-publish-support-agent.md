@@ -264,7 +264,7 @@ You create four evaluation conversations that cover the most important scenarios
    | Out-of-scope restaurant request | |
    | Unresolved ticket escalation | |
 
-1. Open the baseline run of **Contoso escalation delegation evaluation**. Record the **Capability use** result for its delegation conversation. It should fail because the deliberate instruction defect prevents the expected specialist invocation. A high General quality score doesn't override this failure.
+1. Open the baseline run of **Contoso escalation delegation evaluation**. Record the **Capability use** result for its delegation conversation. It should fail because the deliberate instruction defect prevents the expected specialist invocation. A high General quality score doesn't override this failure. If the result is missing or **Invalid**, check the test method and expected capability configuration; this isn't a delegation verdict.
 
 1. Select the delegation conversation to expand the detail view. Read the Capability use result and any explanation or invocation details to investigate the failed check.
 
