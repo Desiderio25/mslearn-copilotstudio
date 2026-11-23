@@ -188,7 +188,7 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. In **Create or select a data set**, select **Conversations** as the data type, then select **Or, write some questions yourself**.
 
-1. Enter `Contoso support release evaluation` for the evaluation name and confirm that **General quality** appears as the test method.
+1. Enter `Contoso support release evaluation` for the evaluation name. Keep all four conversations and any existing default quality method in this evaluation; you add the automated delegation check in Task 2.3.
 
 ### Task 2.2 - Create conversation 1: In-scope answer
 
@@ -207,7 +207,7 @@ You create four evaluation conversations that cover the most important scenarios
     ```
 
    > [!NOTE]
-   > Expected agent responses are for your own reference during manual review. General quality evaluates standards such as relevance and completeness. It doesn't compare the actual response against the expected response.
+   > The expected response paragraphs are references for reviewing answer quality. They don't configure a Capability use or Keyword match test. In Task 2.3, you add the test method and its separate expectation for the escalation conversation.
 
 1. Select **Done**, and then select **Save**.
 
@@ -220,6 +220,22 @@ You create four evaluation conversations that cover the most important scenarios
 | Ambiguity and clarification | I need help with my benefits. | What would you like help with: benefits enrollment, leave requests, or another HR topic? |
 | Out-of-scope boundary | Can you recommend a good restaurant near the office for a team lunch? | I can only help with Contoso IT and HR support topics, so I can't recommend a restaurant. |
 | Connected-agent delegation | I submitted a ticket about my laptop three days ago, and nobody has responded. I need to speak with someone urgently. What should I do? | For urgent help with your laptop ticket, call the IT Help Desk at extension 4357. The help desk is available Monday through Friday, 8 AM to 6 PM. |
+
+1. In the same evaluation, select **Add test method** and check whether **Capability use** is available. If it is, add it. If it isn't available for this Conversations evaluation, use the Keyword match fallback below.
+
+1. If you added **Capability use**, select the **Connected-agent delegation** conversation and open its expected-capability selector. Check whether `Contoso Escalation Agent <your initials>` is selectable. If it is, select it as the sole expected capability for this conversation, confirm the selection, and save your changes. This tests invocation, rather than only the wording of the response. Don't require the specialist for the other three conversations.
+
+   > [!IMPORTANT]
+   > If Capability use isn't available for this evaluation, or the specialist isn't selectable as an expected capability, use this response-based fallback in the same evaluation. Remove the unconfigured Capability use method if you added it.
+   >
+   > 1. Select **Add test method** > **Keyword match**, and select **All**.
+   > 1. Select the delegation conversation. In the **Edit test case** pane, add `4357` to its expected keyword list, then select **Apply** and save the evaluation. Don't put the keyword in the expected agent response field.
+   > 1. Record that automated invocation checking wasn't available. Keyword match flags a missing approved escalation contact, but it can pass without delegation. Use conversation activity to verify invocation; don't treat a keyword pass as proof that routing is correct.
+   >
+   > See [evaluation methods](https://learn.microsoft.com/microsoft-copilot-studio/analytics-agent-evaluation-overview) for per-case expectations.
+
+   > [!NOTE]
+   > Leave the other three conversations' expectations for this additional method empty. They can show **Invalid** for this method because no capability or keyword is required; their existing quality results are independent. Don't add an escalation expectation to routine, clarification, or out-of-scope cases just to remove Invalid results.
 
 ## Exercise 3 - Run the baseline evaluation and observe the defect
 
@@ -240,24 +256,24 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Open the completed evaluation run, if not already open.
 
-1. Review the General quality score for each conversation. Record your observations in the table below.
+1. Review the configured test-method results. Record the existing quality result, if present, and the additional delegation check below. A passing quality score doesn't override a failed delegation check.
 
-   | Conversation | Observed General quality result |
-   | --- | --- |
-   | IT Help Desk hours | |
-   | Vague benefits question | |
-   | Out-of-scope restaurant request | |
-   | Unresolved ticket escalation | |
+   | Conversation | Quality result (if present) | Delegation check result |
+   | --- | --- | --- |
+   | IT Help Desk hours | | |
+   | Vague benefits question | | |
+   | Out-of-scope restaurant request | | |
+   | Unresolved ticket escalation | | |
 
-1. Select the **Unresolved ticket escalation** conversation to expand the detail view.
+1. Select the **Unresolved ticket escalation** conversation to expand the detail view. If you configured **Capability use**, it must show **Fail** if the specialist wasn't invoked, even if the response includes extension 4357. If this conversation shows **Invalid** for that method, return to Configuration and save its expected capability before rerunning.
 
-1. Read the agent's actual response to the user message. Verify that the agent directs the user to the IT Help Desk, provides extension 4357, and explains that it can't connect the user to a person directly.
+1. If you're using the **Keyword match** fallback, expect **Fail** when `4357` is absent. An **Invalid** result means the expected keyword wasn't configured. If the test passes without a specialist invocation, record the coverage limitation; the routing defect is still present.
 
-1. Compare this response to the expected agent response, and check whether the main agent delegated to the connected escalation specialist. Although the actual response might include escalation contact information, it doesn't delegate the request as expected.
+1. Read the actual response and inspect the conversation activity to diagnose the escalation behavior. The agent might direct the user to the employee portal or explain that it can't connect them to a person. Contact information alone doesn't demonstrate delegation.
 
 ### Task 3.3 - Identify the defect
 
-1. Based on your review of the evaluation results, identify the cause of the low-quality escalation response.
+1. Based on your review of the evaluation results, identify the cause of the escalation defect.
 
 1. Return to the **Build** tab and locate this statement in the **Scope boundaries** section of the agent's instructions:
 
@@ -289,7 +305,7 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. Select **Evaluate** in the top navigation, open **Contoso support release evaluation**, and then select **Configuration**.
 
-1. Confirm that your four conversations are still listed.
+1. Confirm that your four conversations, test methods, and escalation expectation are unchanged. Rerun the same evaluation so that the baseline and corrected runs use the same checks.
 
 1. Select **Run** or **Run again**.
 
@@ -301,11 +317,11 @@ You create four evaluation conversations that cover the most important scenarios
 
 1. If the results view is not displayed, select the latest evaluation run to open its results.
 
-1. Compare the General quality result and actual response for the delegation conversation between the baseline run and this run. The score might change, but the updated response must show successful delegation and include the specific escalation contact.
+1. Compare the **Capability use** result for the delegation conversation between the baseline run and this run. A missing invocation fails the baseline check; invoking the expected specialist must pass the same check after the instruction correction. If you're using the **Keyword match** fallback, compare that result instead: the corrected response must contain `4357` and pass.
 
-1. Select the conversation detail to read the agent's updated response. Confirm that the connected escalation specialist provides the IT Help Desk extension when the user asks for escalation.
+1. Select the conversation detail to read the updated response and inspect the conversation activity. Confirm that the connected escalation specialist was invoked and provides the IT Help Desk extension when the user asks for escalation. A passing keyword check alone doesn't prove delegation.
 
-1. Review the other three conversations and confirm that the instruction change didn't reduce their scores.
+1. Review the other three conversations and their existing quality results to confirm that the instruction change didn't reduce answer quality or change the expected in-scope, clarification, and boundary behavior.
 
 > [!NOTE]
 > Copilot Studio saves each evaluation run separately. Compare the latest run with the earlier baseline run after you save the corrected agent.
@@ -406,11 +422,11 @@ You have completed this exercise when you can confirm all of the following:
 - [ ] The Contoso Policy Agent is created with a unique name that includes your initials.
 - [ ] The Contoso Escalation Agent is created, tested, and published in the same environment.
 - [ ] The escalation specialist is connected to the policy agent with a distinct routing description.
-- [ ] Four evaluation conversations are saved in the Evaluate page.
-- [ ] A baseline evaluation run is complete, and the escalation response lacks a specific support contact.
+- [ ] Four evaluation conversations are saved in one evaluation, with an expected specialist invocation or a documented response-based fallback for the delegation case.
+- [ ] A baseline run is complete: missing invocation fails Capability use, or a missing extension (`4357`) fails Keyword match with its invocation-checking limitation recorded.
 - [ ] You can identify the specific instruction text that caused the escalation defect.
 - [ ] The corrected instructions allow the main agent to delegate escalation requests to the connected specialist.
-- [ ] A second evaluation run shows successful delegation and includes the IT Help Desk extension.
+- [ ] A second run of the same evaluation passes the configured escalation check, and the conversation activity confirms successful delegation and the IT Help Desk extension.
 - [ ] The agent is published and the Teams + Microsoft 365 channel is added.
 - [ ] You accessed the agent in Microsoft Teams, contacted your administrator for approval, or documented the fallback validation path.
 - [ ] You validated in-scope answers, boundary behavior, and escalation behavior through the published Teams channel or the available fallback path.
