@@ -12,13 +12,23 @@ lab:
 ---
 # ILT Setup
 
+## Prerequisites
+
+- An account with access to Microsoft Copilot Studio and a license that provides [Managed Environments use rights](https://learn.microsoft.com/en-us/power-platform/admin/managed-environment-licensing). Eligible trial licenses can be used, subject to their restrictions. The Power Apps Developer Plan alone does not provide Managed Environments use rights.
+- A Power Platform Administrator or Dynamics 365 Administrator to create the managed developer environment. If your lab account does not have this role, ask your instructor or tenant administrator to provision the environment on your behalf and ensure you have access to its Dataverse database.
+
+> [!IMPORTANT]
+> [Unmanaged developer environments are deprecated](https://learn.microsoft.com/en-us/power-platform/admin/environments-overview). Use a **Developer** environment with **Managed Environments** enabled for these labs, not an unmanaged developer environment. If you already have an unmanaged developer environment, ask your administrator to [enable Managed Environments](https://learn.microsoft.com/en-us/power-platform/admin/managed-environment-enable) before using it.
+
+If your instructor has already provided a managed developer environment with Dataverse, go directly to the Copilot Studio sign-in step in Task 1.3.
+
 ## Exercise 1 - Create a Power Platform environment
 
 ### Task 1.1 - Power Platform Admin Center
 
-Before you start the lab exercises, you must create a development environment for you to work in.
+Before you start the lab exercises, you or your administrator must create a managed developer environment for you to work in.
 
-1. Open a web browser, navigate to `https://admin.powerplatform.microsoft.com/manage/environments`, and sign in using your credentials for this exercise.
+1. Open a web browser, navigate to `https://admin.powerplatform.microsoft.com/manage/environments`, and sign in using the administrator account that will create the environment.
 
 1. If prompted, choose the option to stay signed in.
 
@@ -37,17 +47,18 @@ Before you start the lab exercises, you must create a development environment fo
 1. In the **Environments** page, select **+ New** to create a new environment with the following settings:
 
    - **Type**: Developer
-   - **Macro Region Geography**: North America
+   - **Macro Region Geography**: The region specified by your instructor (for example, Europe or North America)
    - **Name**: *Your name*
-
-   ![Create an environment in the Power Platform Admin center.](../media/create-environment.png)
 
 1. Expand **Change default settings** and configure the following:
    - **Environment group**: None
-   - **Make this a Managed Environment**: No
-   - **Create on behalf**: No
+   - **Make this a Managed Environment**: Yes
+   - **Create on behalf**: No if creating your own environment. If an administrator is creating it for a learner, select **Yes** and specify the learner as the owner.
    - **Add a Dataverse data store?**: Yes
    
+   > [!NOTE]
+   > If you cannot create a Developer environment or enable Managed Environments, ask your instructor or Power Platform administrator to provide a managed developer environment, for example through [environment routing](https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing). Do not create an unmanaged developer environment.
+
 1. Select **Next** and in the **Add Dataverse** section:
 
    - **Language**: English (United States)
@@ -61,7 +72,9 @@ Before you start the lab exercises, you must create a development environment fo
 
    ![Environment created in the Power Platform Admin center.](../media/environment-created.png)
 
-1. In a new browser tab, navigate to `https://copilotstudio.microsoft.com/` and sign in if prompted.
+1. Open the environment details and verify that the environment type is **Developer**, **Managed Environments** is enabled, and the Dataverse database has been provisioned. If an administrator created the environment on your behalf, confirm that you can access it using your learner account.
+
+1. In a new browser tab, navigate to `https://copilotstudio.microsoft.com/` and sign in using your learner account.
 
    > [!NOTE]  
    > If you experience issues loading Copilot Studio on your environment:
@@ -76,7 +89,7 @@ Before you start the lab exercises, you must create a development environment fo
 
 1. If prompted with a **Get Started** screen, accept the default country or region and continue. Skip any welcome messages.
 
-1. In the bottom-left corner, select the **environment selector** that displays the name of the currently selected environment, and then choose the environment you created.
+1. In the bottom-left corner, select the **environment selector** that displays the name of the currently selected environment, and then choose the managed developer environment prepared for these labs.
 
    ![Select your environment in the Copilot Studio.](../media/select-environment.png)
 
