@@ -221,12 +221,12 @@ You create four evaluation conversations that cover the most important scenarios
 | Out-of-scope boundary | Can you recommend a good restaurant near the office for a team lunch? | I can only help with Contoso IT and HR support topics, so I can't recommend a restaurant. |
 | Connected-agent delegation | I submitted a ticket about my laptop three days ago, and nobody has responded. I need to speak with someone urgently. What should I do? | For urgent help with your laptop ticket, call the IT Help Desk at extension 4357. The help desk is available Monday through Friday, 8 AM to 6 PM. |
 
-1. In the same evaluation, select **Add test method** > **Capability use**.
+1. In the same evaluation, select **Add test method** and check whether **Capability use** is available. If it is, add it. If it isn't available for this Conversations evaluation, use the Keyword match fallback below.
 
-1. Select the **Connected-agent delegation** conversation and open its expected-capability selector. Check whether `Contoso Escalation Agent <your initials>` is selectable. If it is, select it as the sole expected capability for this conversation, confirm the selection, and save your changes. This tests invocation, rather than only the wording of the response. Don't require the specialist for the other three conversations.
+1. If you added **Capability use**, select the **Connected-agent delegation** conversation and open its expected-capability selector. Check whether `Contoso Escalation Agent <your initials>` is selectable. If it is, select it as the sole expected capability for this conversation, confirm the selection, and save your changes. This tests invocation, rather than only the wording of the response. Don't require the specialist for the other three conversations.
 
    > [!IMPORTANT]
-   > Capability use can check the specialist's invocation only if it's selectable as an expected capability. If it isn't selectable, remove the unconfigured Capability use method and use this response-based fallback in the same evaluation:
+   > If Capability use isn't available for this evaluation, or the specialist isn't selectable as an expected capability, use this response-based fallback in the same evaluation. Remove the unconfigured Capability use method if you added it.
    >
    > 1. Select **Add test method** > **Keyword match**, and select **All**.
    > 1. Select the delegation conversation. In the **Edit test case** pane, add `4357` to its expected keyword list, then select **Apply** and save the evaluation. Don't put the keyword in the expected agent response field.
